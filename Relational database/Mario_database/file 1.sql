@@ -33,4 +33,25 @@ CREATE TABLE Bonus(
 );
  
  //Insert data into Bonus table.
- INSERT INTO Bonus()
+ INSERT INTO Bonus(Worker_ref_id,Bonus_Amount,Bonus_Date)VALUES
+ (001,5000,'16-02-20'),(002,3000,'16-06-11'),(003,4000,'16-02-2020'),
+ (004,4500,'16-02-20'),(005,3500,'16-06-11');
+
+ //create table Title.
+ CREATE TABLE Title(
+    Worker_ref_id INT,
+    Worker_Title CHAR(25);
+    AFFECTED FROM DATETIME,
+    FOREIGN KEY(Worker_ref_id) REFERENCES Worker(Worker_id) ON DELETE CASCADE
+ );
+
+ //Insert into Title  table
+ INSERT INTO Title(Worker_ref_id,Worker_Title,AFFECTED_FROM)VALUES
+ (001,'Manager','2016-02-20 00:00:00'),
+ (002,'Executive','2010-06-11 00:00:00'),
+ (008,'Executive','2016-06-11 00:00:00'),
+ (005,'Manager','2016-06-11 00:00:00'),
+ (004,'Asst.Manager','2016-06-11 00:00:00'),
+ (007,'Executive','2016-06-11 00:00:00'),
+ (006,'Lead','2016-06-11 00:00:00'),
+ (003,'Lead','2016-06-11 00:00:00');
